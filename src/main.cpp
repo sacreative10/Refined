@@ -2,7 +2,6 @@
 #include "../include/rlgl.h"
 #include "include/bodies.h"
 #include "include/globals.h"
-#include <SFML/Graphics.hpp>
 #include <iostream>
 
 int main()
