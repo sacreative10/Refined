@@ -19,10 +19,8 @@ int main()
         object.Update(GetFrameTime());
         BeginDrawing();
         ClearBackground(RAYWHITE);
-        DrawRectanglePro(Rectangle{object.position.x, object.position.y, 0, 0},
-            Vector2{object.position.x, object.position.y}, 30, BLACK);
+        DrawRectangle(object.position.x, object.position.y, 50, 25, BLACK);
         std::cout << object.position.x << " " << object.position.y << std::endl;
         EndDrawing();
     }
 }
-
