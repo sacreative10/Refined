@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  compile_and_upload:
 
     runs-on: ubuntu-latest
 
@@ -19,3 +19,8 @@ jobs:
       run: make install
     - name: make 
       run: make
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Refined
+        path: build/bin/app
+    
