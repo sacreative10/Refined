@@ -1,14 +1,13 @@
-
+UNAME := $(shell uname)
 compile:
-	UNAME := $(shell uname)
-	ifeq ($(UNAME), WINDOWS_NT)
+ifeq ($(UNAME), WINDOWS_NT)
 	g++ -c src/main.cpp -o build/app.o -Iinclude/
 	g++ build/app.o -o build/bin/app -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
-	endif
-	ifeq ($(UNAME), Linux)
+endif
+ifeq ($(UNAME), Linux)
 	g++ -c src/main.cpp -o build/app.o -Iinclude/
 	g++ build/app.o -o build/bin/app -lpthread -lX11 -lm -lGL -ldl -lrt -Lbuild/bin/ -lraylib  
-	endif
+endif
 
 
 install:
