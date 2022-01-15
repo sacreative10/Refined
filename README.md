@@ -9,3 +9,5 @@ Steps to install:
   `make`
   To run the executable
   `make run`
+  
+  Test
