@@ -6,7 +6,7 @@ ifeq ($(UNAME), WINDOWS_NT)
 endif
 ifeq ($(UNAME), Linux)
 	g++ -c src/main.cpp -o build/app.o -Iinclude/
-	g++ build/app.o -o build/bin/app -lpthread -lX11 -lm -lGL -Wl,--no-as-needed -ldl -lrt -Lbuild/bin/ -lraylib  
+	g++ build/app.o -o build/bin/app --lGL -lm -lpthread -ldl -lrt -lX11 -Lbuild/bin/ -lraylib  
 endif
 
 
