@@ -7,7 +7,20 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-upload:
+  build-and-upload-windows:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: run make install
+        run: make install
+      - name: run make
+        run: make
+      - uses: actions/upload-artifacts@v2
+        with:
+          name: Refined
+          path: build/bin/app.exe
+  build-and-upload-linux:
 
     runs-on: ubuntu-latest
 
@@ -23,4 +36,4 @@ jobs:
       with:
         name: Refined
         path: build/bin/app
-    
+
