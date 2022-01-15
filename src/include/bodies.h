@@ -19,10 +19,10 @@ struct Body
         position.x = position.x + g_ScreenHeight / 2;
         position.y = g_ScreenWidth / 2 - position.y;
     }
-    mat2  generate_rotation_matrix(float rotation)
-    {
-	    	return mat2{cos(rotation), -sin(rotation), sin(rotation), cos(rotation)};
-    }
+//    mat2  generate_rotation_matrix(float rotation)
+  //  {
+//	    	return mat2{cos(rotation), -sin(rotation), sin(rotation), cos(rotation)};
+  //  }
     void Update(float dt)
     {
         acceleration.x = force.x / mass;
