@@ -1,7 +1,7 @@
 UNAME := $(shell uname)
 compile:
 	echo $(shell uname)
-ifeq ($(OS), MSYS_NT-10.0-17763)
+ifeq ($(UNAME), MSYS_NT-10.0-17763)
 	clang++ -c src/main.cpp -o build/app.o -Iinclude/
 	clang++ build/app.o -o build/bin/app.exe -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
 endif
