@@ -1,12 +1,12 @@
 UNAME := $(shell uname)
 compile:
 ifeq ($(UNAME), WINDOWS_NT)
-	g++ -c src/main.cpp -o build/app.o -Iinclude/
+	clang++ -c src/main.cpp -o build/app.o -Iinclude/
 	g++ build/app.o -o build/bin/app -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
 endif
 ifeq ($(UNAME), Linux)
-	g++ -c src/main.cpp -o build/app.o -Iinclude/
-	g++ build/app.o -o build/bin/app -lGL -lm -lpthread -ldl -lrt -lX11 -Lbuild/bin/ -lraylib  
+	clang++ -c src/main.cpp -o build/app.o -Iinclude/
+	clang++ build/app.o -o build/bin/app -lGL -lm -lpthread -ldl -lrt -lX11 -Lbuild/bin/ -lraylib  
 endif
 
 
