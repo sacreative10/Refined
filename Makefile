@@ -1,6 +1,6 @@
 
 compile:
-	UNAME = $(shell uname)
+	UNAME := $(shell uname)
 	ifeq ($(UNAME), WINDOWS_NT)
 	g++ -c src/main.cpp -o build/app.o -Iinclude/
 	g++ build/app.o -o build/bin/app -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
