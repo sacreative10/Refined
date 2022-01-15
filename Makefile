@@ -2,7 +2,7 @@ UNAME := $(shell uname)
 compile:
 ifeq ($(UNAME), WINDOWS_NT)
 	clang++ -c src/main.cpp -o build/app.o -Iinclude/
-	g++ build/app.o -o build/bin/app -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
+	clang++ build/app.o -o build/bin/app.exe -lpthread -Lbuild/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
 endif
 ifeq ($(UNAME), Linux)
 	clang++ -c src/main.cpp -o build/app.o -Iinclude/
