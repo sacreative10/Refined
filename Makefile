@@ -18,7 +18,7 @@ install:
 	mkdir -p include/
 	git clone https://github.com/raysan5/raylib.git tmp/raylib
 ifeq ($(UNAME), MSYS_NT-10.0-17763)
-	cd tmp/raylib/src/ && mingw32-make -j4 PLATFORM_DESKTOP RAYLIB_LIBTYPE=STATIC
+	cd tmp/raylib/src/ && mingw32-make -j4 PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=STATIC
 endif
 ifeq ($(UNAME), Linux)
 	cd tmp/raylib/src/ && $(MAKE) -f Makefile -j4 PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=STATIC
