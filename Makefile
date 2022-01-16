@@ -2,8 +2,8 @@ UNAME := $(shell uname)
 compile:
 	echo $(shell uname)
 ifeq ($(UNAME), MSYS_NT-10.0-17763)
-	clang++ -c src/main.cpp -o build/app.o -Iinclude/
-	clang++ build/app.o -o build/bin/app.exe -lopengl32 -lgdi32 -lwinmm -Lbuild/bin/ -lraylib
+	g++ -c src/main.cpp -o build/app.o -Iinclude/
+	g++ build/app.o -o build/bin/app.exe -lopengl32 -lgdi32 -lwinmm -Lbuild/bin/ -lraylib
 endif
 ifeq ($(UNAME), Linux)
 	clang++ -c src/main.cpp -o build/app.o -Iinclude/
