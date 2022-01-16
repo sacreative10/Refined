@@ -18,7 +18,7 @@ jobs:
         run: make
       - uses: actions/upload-artifact@v2
         with:
-          name: Refined
+          name: Refined-Windows
           path: build/bin/app.exe
   build-and-upload-linux:
 
@@ -34,6 +34,6 @@ jobs:
       run: make 
     - uses: actions/upload-artifact@v2
       with:
-        name: Refined
+        name: Refined-Linux
         path: build/bin/app
 
