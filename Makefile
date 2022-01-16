@@ -2,8 +2,7 @@ UNAME := $(shell uname)
 compile:
 	echo $(shell uname)
 ifeq ($(UNAME), MSYS_NT-10.0-17763)
-	g++ -c src/main.cpp -o build/app.o -Iinclude/
-	g++ build/app.o -o build/bin/app.exe -lopengl32 -lgdi32 -lwinmm -Lbuild/bin/ -lraylib
+	 g++ src/main.cpp -o build/bin/app.exe -O2 -Wall -Wno-missing-braces -I include/ -L build/bin/ -lraylib -lopengl32 -lgdi32 -lwinmm
 endif
 ifeq ($(UNAME), Linux)
 	clang++ -c src/main.cpp -o build/app.o -Iinclude/
